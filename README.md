@@ -83,6 +83,7 @@ Like so:
 
 
 [^1]: I referred to the [unofficial documentation][6] for a more detailed glossary of the available command line arguments for Sublime Text.
+
 [^2]: It's not clear to me that --resume is actually supported in Sublime Text but I left it in anyways as it appears to function as desired.
 
 
