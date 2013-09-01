@@ -250,7 +250,7 @@
 						<key>Text</key>
 						<string>#!/bin/zsh -f
 
-FILE="$HOME/.edit_anywhere.txt"
+FILE="$HOME/.edit_anywhere.md"
 
 if [ -e "$FILE" ]
 then
@@ -259,7 +259,7 @@ then
 
 		TIME=$(strftime "%Y-%m-%d--%H.%M.%S" "$EPOCHSECONDS")
 
-		mv -f "$FILE" "$HOME/.Trash/edit_anywhere.$TIME.txt"
+		mv -f "$FILE" "$HOME/.Trash/edit_anywhere.$TIME.md"
 
 fi
 
@@ -272,15 +272,17 @@ else
 	/usr/bin/pbpaste &gt; "$FILE"
 fi
 
-# --resume tells BBEdit to open whichever app the text came from
+# --resume tells Sublime Text to open whichever app the text came from
 
-/usr/local/bin/bbedit \
- 	--language 'Markdown' \
+/usr/local/bin/subl \
 	--create-unix \
+	--command toggle_distraction_free \
 	--new-window \
 	--resume \
 	--wait \
 	-- "$FILE"
+
+ # --command toggle_distraction_free is optional. This could also be toggle_full_screen if you prefer.
 
 
 EXIT="$?"
@@ -288,13 +290,13 @@ EXIT="$?"
 if [ "$EXIT" != "0" ]
 then
 
-	if [ -x /usr/local/bin/bbedit ]
+	if [ -x /usr/local/bin/subl ]
 	then
 
-			ERROR="/usr/local/bin/bbedit exists but exited with an error: EXIT = $EXIT"
+			ERROR="/usr/local/bin/subl exists but exited with an error: EXIT = $EXIT"
 
 	else
-			ERROR="/usr/local/bin/bbedit does not exist"
+			ERROR="/usr/local/bin/subl does not exist"
 	fi
 
 
@@ -325,15 +327,15 @@ fi
 						<key>IsActive</key>
 						<true/>
 						<key>IsDisclosed</key>
-						<false/>
+						<true/>
 						<key>MacroActionType</key>
 						<string>ReadFile</string>
 						<key>Name</key>
-						<string>45BA8632-47A5-40DE-836D-607B4E8E39A7</string>
+						<string>586A51B7-8189-47F9-9FB7-1B267C9C0943</string>
 						<key>RedundandDisplayName</key>
 						<string>KMCB_EDIT_ANYWHERE</string>
 						<key>Source</key>
-						<string>~/.edit_anywhere.txt</string>
+						<string>~/.edit_anywhere.md</string>
 						<key>Variable</key>
 						<string>Variable</string>
 					</dict>
@@ -366,7 +368,7 @@ fi
 								<key>IsActive</key>
 								<true/>
 								<key>IsDisclosed</key>
-								<false/>
+								<true/>
 								<key>KeyCode</key>
 								<integer>9</integer>
 								<key>MacroActionType</key>
@@ -420,7 +422,7 @@ fi
 						<key>Text</key>
 						<string>#!/bin/zsh -f
 
-FILE="$HOME/.edit_anywhere.txt"
+FILE="$HOME/.edit_anywhere.md"
 
 if [ -e "$FILE" ]
 then
@@ -429,7 +431,7 @@ then
 
 		TIME=$(strftime "%Y-%m-%d--%H.%M.%S" "$EPOCHSECONDS")
 
-		mv -f "$FILE" "$HOME/.Trash/edit_anywhere.$TIME.txt"
+		mv -f "$FILE" "$HOME/.Trash/edit_anywhere.$TIME.md"
 
 fi
 
@@ -449,9 +451,9 @@ exit
 				<key>IsActive</key>
 				<true/>
 				<key>ModificationDate</key>
-				<real>399507254.032848</real>
+				<real>399691173.98452199</real>
 				<key>Name</key>
-				<string>Edit Anywhere</string>
+				<string>Edit in Sublime Text from Anywhere</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
