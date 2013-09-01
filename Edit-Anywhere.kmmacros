@@ -277,7 +277,7 @@ fi
 /usr/local/bin/subl \
 	--create-unix \
 	--command toggle_distraction_free \
-	--new-window \
+	--new_window \
 	--resume \
 	--wait \
 	-- "$FILE"
